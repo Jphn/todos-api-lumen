@@ -21,8 +21,7 @@ $router->get('/infos', function () {
     return response()->json(['author' => '@Jphn'], 200);
 });
 
-$router->get('/todos/{id}', 'TodosController@getTodo');
 $router->post('/todos', 'TodosController@postTodo');
-$router->put('/todos/{id}/status/done', 'TodosController@putTodoDone');
+$router->get('/todos/{id}', 'TodosController@getTodo');
 $router->put('/todos/{id}/status', 'TodosController@putTodoStatus');
 $router->delete('/todos/{id}', 'TodosController@deleteTodo');

@@ -1,24 +1,100 @@
-# Lumen PHP Framework
+# To-do API - Lumen
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/lumen)](https://packagist.org/packages/laravel/lumen-framework)
+API simples de gerênciamento de afazeres, feita com Lumen PHP.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Linguas (Languages)
 
-## Official Documentation
+- [Português](#documentação)
+- [English](#documentation)
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+## Documentação
 
-## Contributing
+### Adiciona um item
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```http
+  POST /todos
+```
 
-## Security Vulnerabilities
+| Parâmetro     | Tipo     | Descrição                           |
+| :------------ | :------- | :---------------------------------- |
+| `title`       | `string` | **Obrigatório**. Título do todo.    |
+| `description` | `string` | **Obrigatório**. Descrição do todo. |
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+### Retorna o item em específico
 
-## License
+```http
+  GET /todos/${id}
+```
 
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Parâmetro | Tipo  | Descrição                      |
+| :-------- | :---- | :----------------------------- |
+| `id`      | `int` | **Obrigatório**. O ID do item. |
+
+### Atualiza o status do todo
+
+```http
+  PUT /todos/${id}/status
+```
+
+| Parâmetro | Tipo  | Descrição                      |
+| :-------- | :---- | :----------------------------- |
+| `id`      | `int` | **Obrigatório**. O ID do item. |
+
+### Deleta um item específico
+
+```http
+  DELETE /todos/${id}
+```
+
+| Parâmetro | Tipo  | Descrição                      |
+| :-------- | :---- | :----------------------------- |
+| `id`      | `int` | **Obrigatório**. O ID do item. |
+
+----------
+
+## Documentation
+
+### Add an item
+
+```http
+  POST /todos
+```
+
+| Parameter     | Type     | Description                     |
+| :------------ | :------- | :------------------------------ |
+| `title`       | `string` | **Required**. Todo title.       |
+| `description` | `string` | **Required**. Todo description. |
+
+### Get an item
+
+```http
+  GET /todos/${id}
+```
+
+| Parameter | Type  | Description            |
+| :-------- | :---- | :--------------------- |
+| `id`      | `int` | **Required**. Item ID. |
+
+### Updates item status (done/undone)
+
+```http
+  PUT /todos/${id}/status
+```
+
+| Parameter | Type  | Description            |
+| :-------- | :---- | :--------------------- |
+| `id`      | `int` | **Required**. Item ID. |
+
+### Deletes an item
+
+```http
+  DELETE /todos/${id}
+```
+
+| Parameter | Type  | Description            |
+| :-------- | :---- | :--------------------- |
+| `id`      | `int` | **Required**. Item ID. |
+
+## Autores
+
+- [@Jphn](https://www.github.com/Jphn)
